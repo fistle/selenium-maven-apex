@@ -36,7 +36,5 @@ jobs:
       with:
        files: test-results/**/*.xml
       
-    - name: Publish Test Report
-      if: ${{ always() }}
-      uses: fistle/action-surefire-report@v1
+
   
