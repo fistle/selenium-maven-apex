@@ -5,10 +5,12 @@ import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class OracleApexLoginTest {	
 	
 	WebDriver driver = null;
+	
 	
 	public OracleApexLoginTest()
 	{
@@ -34,7 +36,9 @@ public class OracleApexLoginTest {
 	
 	private void setUpDriver()
 	{
-		System.setProperty("webdriver.chrome.driver","main\\resources\\chromedriver.exe");			
+		 WebDriverManager.chromedriver().setup();
+			
+		 
 		ChromeOptions chromeOptions = new ChromeOptions();
 		chromeOptions.addArguments("--disable-gpu");		
 		driver = new ChromeDriver(chromeOptions);
