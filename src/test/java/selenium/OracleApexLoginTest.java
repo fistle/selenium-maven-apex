@@ -29,7 +29,7 @@ public class OracleApexLoginTest {
 	    driver.findElement(By.id("P9999_PASSWORD")).sendKeys("Abc12!abc@12");
 	    
 	    driver.findElement(By.xpath("//button[contains(.,\'Sign In\')]")).click();
-		Assert.assertTrue(driver.getPageSource().contains("Selenium test app")); 
+		Assert.assertTrue(driver.getPageSource().contains("Selenium test app XX")); 
 		
 		driver.quit();	        
 	}
