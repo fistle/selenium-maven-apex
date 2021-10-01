@@ -15,19 +15,6 @@ public class OracleApexLoginTest {
 		setUpDriver();
 	}	
 
-	//@Test
-	public void login() {			
-		driver.get("https://www.pdr.gla.ac.uk");
-		driver.manage().window().setSize(new Dimension(1272, 727));
-		driver.findElement(By.id("username")).sendKeys("dl121z");
-		driver.findElement(By.id("password")).click();
-		driver.findElement(By.id("password")).sendKeys("firhill1234");
-		driver.findElement(By.xpath("//button[contains(.,\'Login\')]")).click();
-
-		Assert.assertTrue(driver.getPageSource().contains("David Lang")); 
-		
-		driver.quit();	        
-	}
 	
 	@Test
 	public void login2() {			
@@ -47,7 +34,7 @@ public class OracleApexLoginTest {
 	
 	private void setUpDriver()
 	{
-		System.setProperty("webdriver.chrome.driver","src\\main\\resources\\chromedriver.exe");			
+		System.setProperty("webdriver.chrome.driver","main\\resources\\chromedriver.exe");			
 		ChromeOptions chromeOptions = new ChromeOptions();
 		chromeOptions.addArguments("--disable-gpu");		
 		driver = new ChromeDriver(chromeOptions);
